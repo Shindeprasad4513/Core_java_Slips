@@ -1,0 +1,57 @@
+/*Que 8
+ Write a program for multilevel inheritance such that Country is inherited from 
+ Continent. 
+State is inherited from Country. Display the place, State, Country and Continent.
+ */
+package Prasad;
+import java.util.*;
+class continent
+{
+	Scanner sc=new Scanner(System.in);
+	String c;
+	void accept() 
+	{
+		System.out.println("Enter Continent:");
+	    c=sc.next();
+	}
+}
+class country extends continent  
+{
+	String cn;
+	void accept() 
+	{
+		super.accept();
+		System.out.println("Enter Country:");
+	    cn=sc.next();
+	}
+}
+class state extends country
+{
+	String s,p;
+	void accept() 
+	{
+		super.accept();
+		System.out.println("Enter place:");
+	    p=sc.next();
+		System.out.println("Enter State:");
+	    s=sc.next();
+	}
+	void disp()
+	{
+		System.out.println("Place :"+p);
+		System.out.println("State :"+s);
+		System.out.println("Country :"+cn);
+		System.out.println("Continent :"+c);
+	}
+}
+public class Que8 
+{
+
+	public static void main(String[] args) 
+	{
+         state ob=new state();
+         ob.accept();
+         ob.disp();
+	}
+
+}
