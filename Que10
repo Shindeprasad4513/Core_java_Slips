@@ -1,0 +1,31 @@
+/*Que 10
+10. Write a program to display the Employee(Empid, Empname, Empdesignation, 
+Empsal) information using toString().
+ */
+package Prasad;
+class Emp
+{
+	int id,sal;
+	String name,desg;
+	Emp(int id,String name,String desg,int sal)
+	{
+		this.id=id;
+		this.name=name;
+		this.desg=desg;
+		this.sal=sal;
+	}
+	public String toString()
+	{
+		return "EMP ID="+id+" Name="+name+" Desg="+desg+" Salary="+sal;
+	}
+}
+public class Que10 
+{
+
+	public static void main(String[] args) 
+	{
+	   Emp ob=new Emp(111,"Prasad","HR",25000);
+	   System.out.println(ob);
+	}
+
+}
