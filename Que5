@@ -1,0 +1,73 @@
+/*Que 5
+Define a class CricketPlayer (name,no_of_innings,no_of_times_notout, totatruns, 
+bat_avg). Create an array of n player objects .Calculate the batting average for each 
+player using static method avg(). Define a static sort method which sorts the array on 
+the basis of average. Display the player details in sorted order. 
+*/
+package Prasad;
+import java.util.*;
+class CricketPlayer
+{
+	String name;
+	int inn,notout,tot,batavg;
+	void accept()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Player Name No_of_Innings No_of_time_notout total_runs:");
+		name=sc.next();
+		inn=sc.nextInt();
+		notout=sc.nextInt();
+		tot=sc.nextInt();
+	    
+	}
+	static void avg(CricketPlayer ob[],int n)
+	{
+         for(int i=0;i<n;i++)
+         {
+             ob[i].batavg=ob[i].tot/ob[i].notout;	 
+         }
+         
+	}
+	static void sort(CricketPlayer ob[],int n)
+	{
+		for(int i=0;i<n;i++)
+		{
+			for(int j=0;j<i;j++)
+			{
+				if(ob[i].batavg>ob[j].batavg)
+				{
+					CricketPlayer t=ob[i];
+					ob[i]=ob[j];
+					ob[j]=t;
+				}
+			}
+		}
+		for(int i=0;i<n;i++)
+		{
+			System.out.println("Player name="+ob[i].name);
+			System.out.println("No of Innings="+ob[i].inn);
+			System.out.println("No of times notout="+ob[i].notout);
+			System.out.println("Total Runs="+ob[i].tot);
+			System.out.println("Bat average="+ob[i].batavg);
+		}
+	}
+}
+public class Que5 
+{
+	 
+	public static void main(String[] args) 
+	{
+          Scanner sc=new Scanner(System.in);
+          System.out.println("Enter Limit:");
+          int n=sc.nextInt();
+          CricketPlayer ob[]=new CricketPlayer[n];
+          for(int i=0;i<n;i++)
+          {
+        	 ob[i]=new CricketPlayer();
+        	 ob[i].accept();
+          }
+          CricketPlayer.avg(ob,n);
+          CricketPlayer.sort(ob,n);
+          
+	}
+}
