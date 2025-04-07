@@ -1,0 +1,60 @@
+/* Que 7
+  Define class patient (patient_name, patient_age, patient_oxy_level,patient_HRCT_report).
+   Create an object of patient. Handle appropriate exception while 
+   patient oxygen level less than 95% and HRCT scan report 
+greater than 10, then throw user defined Exception “Patient is Covid Positive(+) and 
+Need to Hospitalized” otherwise display its information.
+ */
+package Prasad;
+import java.util.*;
+class Covid extends Exception
+{
+	Covid()
+	{
+		System.out.println("Patient is covid positive and need to be hospitalized..!");
+	}
+}
+class patient
+{
+	String pname;
+	int age,oxy,hrct;
+   patient(String pname,int age,int oxy,int hrct)
+   {
+	   this.pname=pname;
+	   this.age=age;
+	   this.oxy=oxy;
+	   this.hrct=hrct;
+   }
+}
+public class Que7 
+{
+
+	public static void main(String[] args) 
+	{
+		          Scanner sc=new Scanner(System.in);
+		          System.out.println("Enter name Age Oxy Level And Hrct:");
+		          String name=sc.next();
+		          int age=sc.nextInt();
+		          int oxy=sc.nextInt();
+		          int hrct=sc.nextInt();
+		          patient p=new patient(name,age,oxy,hrct);
+                  try
+                  {
+                	  if(p.oxy>95 && p.hrct<10)
+                	  {
+                		  throw new Covid();
+                	  }
+                	  else
+                	  {
+                		  System.out.println("Patient Name="+name);
+                		  System.out.println("Patient Age="+age);
+                		  System.out.println("Patient Oxy Level="+oxy);
+                		  System.out.println("Patient HRCT="+hrct);
+                	  }
+                  }catch(Covid c)
+                  {
+                	  
+                  }
+	}
+
+}
