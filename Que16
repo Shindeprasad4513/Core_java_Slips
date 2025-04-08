@@ -1,0 +1,20 @@
+/*Que16
+Write a program to find the square of given number using functional interface. 
+ */
+package Prasad;
+import java.util.*;
+@FunctionalInterface
+interface square
+{
+	void square1(int n);
+}
+public class Que15 
+{
+
+	public static void main(String[] args) 
+	{
+      square s=(int x) ->System.out.println("Square="+x*x);
+      s.square1(5);    
+	}
+
+}
