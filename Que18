@@ -1,0 +1,69 @@
+/*Que-17
+ Define Student class(roll_no, name, percentage) to create n objects of 
+the Student class. Accept details from the user for each object. Define a 
+static method “sortStudent” which sorts the array on the basis of 
+percentage.
+ */
+package Prasad;
+import java.util.*;
+public class Que17 
+{
+
+	public static void main(String[] args) 
+	{
+		  Scanner sc=new Scanner(System.in);
+		  System.out.println("Enter limit:");
+		  int n=sc.nextInt();
+          student[] ob=new student[n];
+	      for(int i=0;i<n;i++)
+	      {
+	    	  System.out.println("Enter rno name and per:");
+	    	   
+	    	  ob[i].rno=sc.nextInt();
+	    	  ob[i].name=sc.next();
+	    	  ob[i].per=sc.nextFloat();
+	          ob[i]=new student();
+	      }
+	      student.sort(ob,n);
+	      for(int i=0;i<n;i++)
+	      {
+	    	  ob[i].disp();
+	      }
+	}
+
+}
+
+class student
+{
+	int rno;
+	String name;
+	float per;
+	student()
+	{
+		rno=0;
+		name="";
+		per=0;
+	}
+	static void sort(student []ob,int n)
+	{
+		for(int i=0;i<n;i++)
+		{
+			for(int j=0;j<i;j++)
+			{
+				if(ob[i].per<ob[j].per)
+				{
+					student t=ob[i];
+					ob[i]=ob[j];
+					ob[j]=t;
+				}
+			}
+		}
+	}
+	void disp()
+	{
+		System.out.println("Student Rno="+rno);
+		System.out.println("Student Name="+name);
+		System.out.println("Student Per="+per);
+	}
+}
+ 
