@@ -1,0 +1,102 @@
+/*Que-11
+ Create an abstract class “order” having members id, description. Create two subclasses 
+“PurchaseOrder” and “Sales Order” having members customer name and Vendor name 
+respectively. Definemethods accept and display in all cases. Create 3 objects each of 
+Purchase Order and Sales Order and accept and display details.
+ */
+package Prasad;
+import java.util.Scanner;
+abstract class order 
+{
+	 int id;
+	String desc;
+	abstract void accept();
+	abstract void display();
+}	
+class purchaseorder extends order
+{
+
+	String cname;
+	void accept() 
+	{ 
+	   	Scanner sc=new Scanner(System.in);
+         System.out.println("Enter Custemer Id Description and Name:");
+         id=sc.nextInt();
+	     desc=sc.next();
+	     cname=sc.next();
+	}
+
+	@Override
+	void display() 
+	{
+          System.out.println("Customer Name="+cname);
+          
+		System.out.println("Customer Id="+id);
+          System.out.println("Customer Description="+desc);
+	}
+
+}
+
+
+class salesorder extends order
+{
+	String vname;
+	void accept()
+	{
+
+	   	Scanner sc=new Scanner(System.in);
+         System.out.println("Enter Vender Name:");
+	     vname=sc.next();
+	}
+	void display()
+	{
+		System.out.println("Vender Name="+vname);
+	       System.out.println("Customer Id="+id);
+          System.out.println("Customer Description="+desc);
+	}
+}
+
+public class Q11 
+{
+
+	public static void main(String[] args) 
+	{
+		int ch;
+ 		Scanner sc=new Scanner(System.in);
+          purchaseorder p[]=new purchaseorder[3];
+          salesorder s[]=new salesorder[3];
+          do
+          {
+        	  System.out.println("\n1.Purchaseorder\n2.Salesorder\n3Exit\nEnter your choice:");
+        	  ch=sc.nextInt();
+        	  switch(ch)
+        	  {  
+                   case 1 : 
+                	   for(int i=0;i<3;i++)
+            	         {
+         	        	    p[i]=new purchaseorder(); 
+            	            p[i].accept();
+            	         }
+                	   for(int i=0;i<3;i++)
+             	         {
+                              p[i].display();
+            	         }
+                	break;   
+                   case 2 : 
+                	   for(int i=0;i<3;i++)
+            	         {
+         	        	    s[i]=new salesorder(); 
+            	            s[i].accept();
+            	         }
+                	   for(int i=0;i<3;i++)
+             	         {
+                              s[i].display();
+            	         }
+                	break;   
+                   case 3 : System.out.println("Exit");
+                   break;
+        	  }
+        }while(ch<3);
+	}
+
+}
