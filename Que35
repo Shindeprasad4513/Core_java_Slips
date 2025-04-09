@@ -1,0 +1,26 @@
+package PS;
+import java.io.*;
+public class Que35 
+{
+
+	public static void main(String[] args) throws IOException 
+	{
+       FileOutputStream fout=new FileOutputStream("C:\\\\Users\\\\HP\\\\Desktop\\\\Java Slips\\\\abc.txt"); 
+       DataOutputStream dos=new DataOutputStream(fout);
+       dos.writeInt(5);
+       dos.writeDouble(2.5);
+       dos.writeBoolean(true);
+       dos.writeChar('P');
+       fout.close();
+       
+       FileInputStream fin=new FileInputStream("C:\\\\Users\\\\HP\\\\Desktop\\\\Java Slips\\\\abc.txt");
+       DataInputStream din=new DataInputStream(fin);
+       int a=din.readInt();
+       double b=din.readDouble();
+       boolean c=din.readBoolean();
+       char d=din.readChar();
+       System.out.println(" "+a+" "+b+" "+c+" "+d);
+       fin.close();
+	}
+
+}
