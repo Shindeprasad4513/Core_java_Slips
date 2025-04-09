@@ -1,0 +1,40 @@
+package PS;
+import java.util.*;
+import javax.swing.*;
+import java.awt.*;
+public class Que37 extends Frame 
+{
+	public static void main(String[] args)   
+	{
+       JFrame j=new JFrame("Menubar,Menu,MenuItems");
+       j.setVisible(true);
+       j.setSize(600,400);
+       
+       JMenuBar mb=new JMenuBar();
+       mb.setVisible(true);
+       j.setJMenuBar(mb);
+	   
+       JMenu m=new JMenu("File");
+       mb.add(m);
+       m.setVisible(true);
+       
+       JMenuItem m1=new JMenuItem("New");
+       JMenuItem m2=new JMenuItem("Open");
+       JMenuItem m3=new JMenuItem("Save");
+	
+	   m.add(m1);
+	   m.add(m2);
+	   m.add(m3);
+	   
+	   JMenu m4=new JMenu("Save as");
+	   JMenuItem m5=new JMenuItem(".ppt");
+	   JMenuItem m6=new JMenuItem(".doc");
+	   JMenuItem m7=new JMenuItem(".pdf");
+	   
+	   m.add(m4);
+	   m4.add(m5);
+	   m4.add(m6);
+	   m4.add(m7);
+	}
+
+}
