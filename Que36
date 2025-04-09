@@ -1,0 +1,31 @@
+package PS;
+import java.io.*;
+public class Que36 
+{
+
+	public static void main(String[] args) throws IOException 
+	{
+       File f=new File("C:\\Users\\HP\\Desktop\\Java Slips\\abc.txt");
+       FileInputStream fin=new FileInputStream(f);
+       int n;
+       if(f.exists())
+       {
+    	   System.out.println("File Name="+f.getName());
+    	   System.out.println("File Size="+f.length());
+    	   System.out.println("File Path="+f.getPath());
+    	   System.out.println("File Parent="+f.getParent());
+    	   System.out.println("File Parent="+f.getAbsolutePath());
+    	   System.out.println("File Parent="+f.lastModified());
+       }
+       else
+       {
+    	   System.out.println("File not found..!");
+       }
+       while((n=fin.read())!=-1)
+       {
+    	   System.out.println((char)n);
+       }
+	  fin.close();
+	}
+
+}
