@@ -1,0 +1,58 @@
+/*Que-18 Write a menu driven program to perform the following operations 
+a. Calculate the volume of cylinder. (hint : Volume: π × r² × h) 
+b. Find the factorial of given number. 
+c. Check the number is Armstrong or not. 
+d. Exit
+ */
+package PS;
+import java.util.*;
+public class Que18 
+{
+
+	public static void main(String[] args) 
+	{
+     Scanner sc=new Scanner(System.in);
+     int ch;
+     do
+     {
+    	 System.out.println("\n1.Volume\n2.Factorial;\n3.Armstrong\n4.Exit\n");
+    	 System.out.println("Enter your choice:");
+    	 ch=sc.nextInt();
+    	 switch(ch)
+    	 {
+    	 case 1 : System.out.println("Enter Radius and height:");
+    	          float r=sc.nextFloat();
+    	          float h=sc.nextFloat();
+    	          System.out.println("Voulume of cylinder="+(3.14f*r*r*h));
+    	          break;
+    	 case 2 : int f=1;
+    	          System.out.println("Enter no:");
+    	          int n=sc.nextInt();
+    	          for(int i=1;i<n;i++)
+    	          {
+    	        	  f=f*i;
+    	          }
+                  System.out.println("Factorial="+f);
+                  break;
+    	 case 3 : int s=0,d;
+		    	 System.out.println("Enter no:");
+		         n=sc.nextInt();
+		         int n1=n;
+		         while(n1>0)
+		         {
+		       	   d=n1%10;
+		       	   s=s+(d*d*d);
+		       	   n1=n1/10;
+		         }
+		         if(s==n)
+		        	  System.out.println("Number is Armstrong..!");
+		         else
+		        	  System.out.println("Number is not Armstrong..!");
+    	 case 4 : System.out.println("Exit..!");
+    	 }
+    	 
+     }while(ch<4);
+
+	}
+
+}
