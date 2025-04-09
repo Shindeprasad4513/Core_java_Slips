@@ -1,0 +1,29 @@
+package PS;
+import java.io.*;
+public class Que34 
+{
+
+	public static void main(String[] args) throws IOException 
+	{
+        File f1=new File("C:\\Users\\HP\\Desktop\\Java Slips\\abc.txt");
+        File f2=new File("C:\\Users\\HP\\Desktop\\Java Slips\\xyz.txt");
+        if(f1.isFile() && f2.isFile())
+        {
+        	FileInputStream fin=new FileInputStream(f1);
+            FileOutputStream fout=new FileOutputStream(f2);
+            int n;
+            while((n=fin.read())!=-1)
+            {
+            	fout.write(n);
+            }
+            fin.close();
+            fout.close();
+            System.out.println("File copy Successfully..!");
+        }
+        else
+        {
+        	System.out.println("File not Found..!");
+        }
+	}
+
+}
